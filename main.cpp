@@ -25,7 +25,7 @@ public:
 
 int main()
 {
-    Entity entity("AchroDev");                  // This calls the default constructor on entity and then sets the name to 'AchroDev'
+    Entity entity = Entity("AchroDev");         // This does the same thing just written slightly different
     std::cout << entity.GetName() << std::endl; // Printing the value stored for the name of the Entity
     std::cin.get();
 }
