@@ -28,9 +28,10 @@ int main()
     Entity *e; // Entity pointer
     // Example scope showing code that would fail when writing the object to the stack
     {
-        Entity entity("AchroDev");                  // This does the same thing just written slightly different
+        Entity *entity = new Entity("AchroDev");    // Now we are allocating the entity on the heap, declared with 'new' and using a pointer
         e = &entity;                                // Assigning the entity pointer to the memory address of the entity.
         std::cout << entity.GetName() << std::endl; // Printing the value stored for the name of the Entity
+        delete entity;                              // You must delete the object from the heap after allocating
     }
     // Once we leave this scope the "AchroDev" assignment is gone, this is where you would want to use heap allocation instead
 
