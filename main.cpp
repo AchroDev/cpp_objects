@@ -25,10 +25,14 @@ public:
 
 int main()
 {
+    Entity *e; // Entity pointer
     // Example scope showing code that would fail when writing the object to the stack
     {
-        Entity entity = Entity("AchroDev");         // This does the same thing just written slightly different
+        Entity entity("AchroDev");                  // This does the same thing just written slightly different
+        e = &entity;                                // Assigning the entity pointer to the memory address of the entity.
         std::cout << entity.GetName() << std::endl; // Printing the value stored for the name of the Entity
-        std::cin.get();
     }
+    // Once we leave this scope the "AchroDev" assignment is gone
+
+    std::cin.get();
 }
