@@ -31,9 +31,9 @@ int main()
         Entity *entity = new Entity("AchroDev");     // Now we are allocating the entity on the heap, declared with 'new' and using a pointer
         e = entity;                                  // The entity is already a pointer now so we no longer need to reference
         std::cout << entity->GetName() << std::endl; // Now that the entity is a pointer, you have to either implicitly dereference or use the arrow operator
-        delete entity;                               // You must delete the object from the heap after allocating
     }
     // Once we leave this scope the "AchroDev" assignment is gone, this is where you would want to use heap allocation instead
 
     std::cin.get();
+    delete e; // You must delete the object from the heap after allocating
 }
