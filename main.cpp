@@ -23,19 +23,12 @@ public:
     const String &GetName() const { return m_Name; }
 };
 
-// Example function of when the object shouldn't be created this way.
-void Function()
-{
-    int a = 2;
-    // When you create the object like this, it lives on the stack and will be deleted once the function call ends
-    Entity entity = Entity("AchroDev");
-}
-
 int main()
 {
-    Function();
-
-    Entity entity = Entity("AchroDev");         // This does the same thing just written slightly different
-    std::cout << entity.GetName() << std::endl; // Printing the value stored for the name of the Entity
-    std::cin.get();
+    // Example scope showing code that would fail when writing the object to the stack
+    {
+        Entity entity = Entity("AchroDev");         // This does the same thing just written slightly different
+        std::cout << entity.GetName() << std::endl; // Printing the value stored for the name of the Entity
+        std::cin.get();
+    }
 }
