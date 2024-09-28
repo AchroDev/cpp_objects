@@ -15,7 +15,7 @@ private:
     // Public section
 public:
     // Default constructor initializing m_Name
-    Entity() : m_Name("Unkown") {}
+    Entity() : m_Name("Unknown") {}
     // Other constructor setting m_Name to the referenced 'name' value
     Entity(const String &name) : m_Name(name) {}
 
@@ -25,6 +25,7 @@ public:
 
 int main()
 {
-
+    Entity entity;                              // This calls the default constructor
+    std::cout << entity.GetName() << std::endl; // Printing the value stored for the name of the Entity
     std::cin.get();
 }
